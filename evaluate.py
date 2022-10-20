@@ -17,11 +17,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     """
     SBERT: "all-roberta-large-v1", "all-distilroberta-v1", "all-mpnet-base-v2"
-    SimCSE: "unsup-simcse-roberta-large", "unsup-simcse-bert-large", "unsup-simcse-bert-large-uncased"
+    SimCSE: "unsup-simcse-roberta-large", "unsup-simcse-bert-large-uncased", "unsup-simcse-bert-base-uncased"
     """
     parser.add_argument("-n", "--name", type=str)
     args = parser.parse_args()
     embedder_name = args.name
+
+    print(f"Starting to run the experiments for {embedder_name}.")
 
     """Write the values of the evaluation to out_file."""
     out_file = f"results/metrics/{embedder_name}.json"
@@ -123,7 +125,7 @@ if __name__ == "__main__":
             features = imdb_features(encoding_name=embedder_name, n_pairs=n_pair, n_extra_orig=1707) # sample k(=n_pair) counterfactuals and 1,707(=n) extra originals.
             for model in models:
                 model.evaluate(
-                        features=features, seed=seed, lambdas=lambdas, n_pair=n_pair
+                    features=features, seed=seed, lambdas=lambdas, n_pair=n_pair
                 )
             for model_strong in models_strong:
                 model_strong.evaluate(
