@@ -1,10 +1,9 @@
 # Robustifying Sentiment Classification by Maximally Exploiting Few Counterfactuals
 
 This repository contains the implementation of the EMNLP 2022 paper
-"Robustifying Sentiment Classification by Maximally Exploiting Few Counterfactuals" by Maarten De Raedt, Fréderic Godin, Chris Develder and Thomas Demeester.
+["Robustifying Sentiment Classification by Maximally Exploiting Few Counterfactuals"]( https://arxiv.org/abs/2210.11805) by Maarten De Raedt, Fréderic Godin, Chris Develder and Thomas Demeester.
 
 For any questions about the paper or code contact the first author at [maarten.deraedt@ugent.be](mailto:maarten.deraedt@ugent.be).
-
 
 ## Table of Contents
 - [Installation](#installation)
